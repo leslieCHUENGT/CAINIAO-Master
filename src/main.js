@@ -42,25 +42,7 @@ import {
   TextEllipsis
 } from 'vant'
 import {
-  ElScrollbar,
-  ElContainer,
-  ElAside,
-  ElMenu,
-  ElSubMenu,
-  ElMenuItemGroup,
-  ElMenuItem,
-  ElForm,
-  ElFormItem,
-  ElInput,
-  ElButton,
-  ElCheckbox,
-  ElCard,
-  ElPopconfirm,
-  ElTable,
-  ElTableColumn,
-  ElPagination,
-  ElDialog,
-  ElUpload
+  ElCard
 } from 'element-plus'
 import 'element-plus/dist/index.css'
 import 'vant/lib/index.css'
@@ -74,26 +56,8 @@ app
   .use(Tabs)
   .use(router)
   .use(createPinia())
-  .use(ElContainer)
-  .use(ElAside)
-  .use(ElMenu)
-  .use(ElSubMenu)
-  .use(ElMenuItemGroup)
-  .use(ElMenuItem)
-  .use(ElForm)
-  .use(ElFormItem)
-  .use(ElInput)
-  .use(ElButton)
-  .use(ElCheckbox)
   .use(ElCard)
   .use(Loading)
-  .use(ElPopconfirm)
-  .use(ElTable)
-  .use(ElTableColumn)
-  .use(ElPagination)
-  .use(ElDialog)
-  .use(ElUpload)
-  .use(ElScrollbar)
   .use(Cascader)
   .use(Icon)
   .use(Sticky)
