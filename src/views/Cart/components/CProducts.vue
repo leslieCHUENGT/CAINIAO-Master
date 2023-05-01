@@ -46,7 +46,7 @@ const deleteProduct = (item) => { // 删除商品项
   cartStore.deteleProducts(item.id)
 }
 const onSubmit = (val) => {
-  showToast(`请您支付${val / 100}只因🐔`)
+  showToast(`请您支付${val / 100}元`)
 }
 </script>
 

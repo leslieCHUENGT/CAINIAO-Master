@@ -1,7 +1,7 @@
 <template>
     <div>
         <header class="simple-header">
-            <i v-if="!noback"  @click="goBack"><van-icon name="arrow-left" /></i>
+            <i v-if="!noback" @click="goBack"><van-icon name="arrow-left" /></i>
             <i v-else>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
             <div class="simple-header-name">{{ props.name }}</div>
             <i><van-icon name="ellipsis" /></i>
@@ -9,13 +9,13 @@
         <div class="block">
         </div>
     </div>
-  </template>
+</template>
   
-  <script setup>
-  import { useRouter } from 'vue-router'
-  
-  const router = useRouter()
-  const props = defineProps({
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const props = defineProps({
     name: {
         type: String,
         value: ''
@@ -24,15 +24,14 @@
         type: Boolean,
         value: false
     }
-  })
-  const goBack = () => {
+})
+const goBack = () => {
     router.go(-1)
-  }
-  </script>
+}
+</script>
   
-  <style lang="stylus" scoped>
-  @import '../common/style/mixin';
-
+<style lang="stylus" scoped>
+@import '../common/style/mixin';
   .simple-header
       position fixed
       top 0
@@ -49,4 +48,4 @@
   .block
       height 1.17333rem
     
-  </style>
+</style>

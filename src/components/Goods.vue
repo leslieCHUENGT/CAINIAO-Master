@@ -48,8 +48,12 @@ import { reactive,computed, ref, onMounted,nextTick } from "vue";
 import { useRouter } from 'vue-router'
 import { useProductsDetailStore } from '@/store/detail.js'
 
-const productsDetailStore = useProductsDetailStore();
-const router = useRouter()
+// 引入 useProductsDetailStore 和 useRouter
+import { reactive, computed, ref, onMounted, nextTick } from "vue";
+import { useRouter } from 'vue-router'
+import { useProductsDetailStore } from '@/store/detail.js'
+
+// 定义 props
 const props = defineProps({
   leftGoods: {
     type: Array,
@@ -65,13 +69,16 @@ const props = defineProps({
   }
 });
 
+// 获取路由和 store
+const router = useRouter()
+const productsDetailStore = useProductsDetailStore();
+
+// 跳转到详情页
 const gotoDetail = async (id) => {
-  // await productsDetailStore.loadAllProductsDetail(id)
   router.push({
       path: `/detail/${id}`
   })
 }
-
 
 </script> 
 <style lang='stylus' scoped>

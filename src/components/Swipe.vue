@@ -1,17 +1,9 @@
 <template>
-  <van-swipe
-    class="home-swiper"
-   :class="{'detail-swiper':!props.isHomeSwiper}"
-   :autoplay="3000"
-  >
-     <van-swipe-item 
-      v-for="item in swiperList" 
-      :key="item.imgSrc || item"
-      v-lazy="item"
-     >
-         <!-- 通用组件 兼容数据格式不同 -->
-        <img :src="item.imgSrc || item" />
-     </van-swipe-item>
+  <van-swipe class="home-swiper" :class="{ 'detail-swiper': !props.isHomeSwiper }" :autoplay="3000">
+    <van-swipe-item v-for="item in swiperList" :key="item.imgSrc || item" v-lazy="item">
+      <!-- 通用组件 兼容数据格式不同 -->
+      <img :src="item.imgSrc || item" />
+    </van-swipe-item>
   </van-swipe>
 </template>
 
@@ -19,9 +11,9 @@
 const props = defineProps({
   swiperList: {
     type: Array,
-    default:[]
+    default: []
   },
-  isHomeSwiper:{
+  isHomeSwiper: {
     type: Boolean,
     default: true
   }

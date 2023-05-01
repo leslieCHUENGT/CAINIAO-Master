@@ -7,11 +7,11 @@ import detail from './data/detail'
 
 const usersMap = new Map()// 存储全量用户数据
 const regName = new Set() // 存值用户注册账号
-// - 假接口满足什么? 数据 url
+
 Mock.setup({
     timeout: '20-1000' // 随机的延迟时间, 模式请求耗时
 })
-// 轮播图 url /swiperList
+
 Mock.mock(/\/swiperList/, 'get', () => {
     return {
       code: 0,
@@ -34,6 +34,7 @@ Mock.mock(/\/scrollmenu/, 'get', () => {
 })
 
 Mock.mock(/\/products/, 'get', () => {
+  // 瀑布流的高度设置
   const maxNum = 250;
   const minNum = 200;
   const productsWithHeight = products.map(item => ({ 

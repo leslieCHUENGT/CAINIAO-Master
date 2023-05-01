@@ -20,11 +20,9 @@
       </ul>
   </div>
 </template>
-
 <script setup>
 
 </script>
-
 <style lang="stylus" scoped>
 @import '../common/style/mixin.styl'
 .navbar

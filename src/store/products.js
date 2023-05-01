@@ -1,18 +1,17 @@
 import { defineStore } from 'pinia'
-// import { getProducts } from '@/service/shop'; 
 import { shopApi } from '@/service/index.js'
-// 创建一个子仓
+
 export const useProductsStore = defineStore('products', {
-    state: () => ({ // 中央状态
+    state: () => ({ 
         allGoods: [],
         leftGoods: [],
         rightGoods: []
     }),
     actions: {
-        // 走接口
         async loadAllProducts() {
             const [e, r] = await shopApi.getProducts();
             if (!e && r) this.allGoods = r;
+            // 设置瀑布流
             let leftTempGoods = [],
                 rightTempGoods = [];
             const heights = [0, 0];

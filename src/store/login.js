@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'; // 定义store模型
+import { defineStore } from 'pinia'; 
 
 export const useUserStore = defineStore('login',{
       state: () => ({ 
