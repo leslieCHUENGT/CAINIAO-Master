@@ -122,9 +122,7 @@ const onFinish = ({ selectedOptions }) => {
 .search-bar-show
   display none
 .search-bar 
-  pointer-events none // 事件穿透 让下层事件能被触发
   .search-normal 
-    pointer-events visiblePainted // 只有点击元素内部事件才会触发
     padding 0 .32rem .266667rem
     width 100%
     transition width .4s

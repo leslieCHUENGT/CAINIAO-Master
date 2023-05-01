@@ -73,7 +73,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import { useUserStore } from '@/store/login.js'
-import { doLogin } from '@/service/login';
+import { loginApi } from '@/service/index.js';
 import { setLocal, TOKEN } from '@/common/js/utils.js'
 import { showFailToast, showSuccessToast } from 'vant';
 import md5 from 'js-md5'; // 单向加密
@@ -92,11 +92,11 @@ const UserStore = useUserStore()
 const onSubmit = async (values) => {
   if (register.value) { // 拿到注册页的values
     values.regpassword = md5(values.regpassword) // 密码不能明文传输
-    const res = await doLogin(values, 'register') 
+    const [e, res] = await loginApi.doLogin(values, 'register') 
     res ? showFailToast('用户已注册') : toggle(); // 是否重复注册
   } else if (login.value) { // 拿到登录页的values
     values.password = md5(values.password)
-    const data = await doLogin(values, 'login')
+    const [e, data] = await loginApi.doLogin(values, 'login')
     if (data.code != 0) { // 登录失败
       showFailToast(data.msg) // 提示失败原因
     } else { // 成功登录

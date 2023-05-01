@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
-import { getProducts } from '@/service/shop'; // alias 架构的想法
+// import { getProducts } from '@/service/shop'; 
+import { shopApi } from '@/service/index.js'
 // 创建一个子仓
 export const useProductsStore = defineStore('products', {
     state: () => ({ // 中央状态
@@ -10,8 +11,8 @@ export const useProductsStore = defineStore('products', {
     actions: {
         // 走接口
         async loadAllProducts() {
-            const { result } = await getProducts();
-            this.allGoods = result;
+            const [e, r] = await shopApi.getProducts();
+            if (!e && r) this.allGoods = r;
             let leftTempGoods = [],
                 rightTempGoods = [];
             const heights = [0, 0];
