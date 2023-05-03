@@ -44,9 +44,6 @@
   </div>
 </template>
 <script setup>
-import { reactive,computed, ref, onMounted,nextTick } from "vue";
-import { useRouter } from 'vue-router'
-import { useProductsDetailStore } from '@/store/detail.js'
 
 // 引入 useProductsDetailStore 和 useRouter
 import { reactive, computed, ref, onMounted, nextTick } from "vue";
@@ -119,9 +116,5 @@ const gotoDetail = async (id) => {
           .title 
              color: #222333;
           .price 
-             color: $primary;
-            
-      
-  
-  
+             color: $primary;            
 </style>

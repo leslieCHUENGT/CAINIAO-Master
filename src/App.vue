@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => {
     <transition :name="state.transitionName">
       <!-- 缓存组件 -->
       <keep-alive> 
-        <!-- 根据路由meta中的keepAlive属性判断是否缓存组件 -->
+        
         <component :is='Component' :key="$route.name" v-if="$route.meta.keepAlive" />
       </keep-alive>
     </transition>

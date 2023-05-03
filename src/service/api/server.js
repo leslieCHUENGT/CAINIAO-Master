@@ -1,4 +1,5 @@
 import axios from "axios";
+import axiosRetry from 'axios-retry';
 
 import {
   handleChangeRequestHeader,
@@ -8,6 +9,8 @@ import {
   handleNetworkError,
 } from "./tools";
 
+// 当请求失败后，自动重新请求，只有3次失败后才真正失败
+axiosRetry(axios, { retries: 3 });
 
 axios.interceptors.request.use((config) => {
   config = handleChangeRequestHeader(config);
@@ -60,3 +63,4 @@ export const Post = (url, data, params = {}) => {
       });
   });
 };
+
