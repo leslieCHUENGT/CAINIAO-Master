@@ -36,6 +36,7 @@ export const Get = (url, params = {}, clearFn) =>
     axios
       .get(url, { params })
       .then((result) => {
+        console.log(result);
         let res;
         if (clearFn !== undefined) {
           res = clearFn(result.result);
@@ -63,4 +64,3 @@ export const Post = (url, data, params = {}) => {
       });
   });
 };
-

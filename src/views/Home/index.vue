@@ -30,7 +30,7 @@ import { getLocal, setLocal} from "@/common/js/utils";
 import { useHomeStore } from '@/store/home.js'
 import { showLoadingToast, closeToast } from 'vant'
 
-const homeStore = useHomeStore(); // 本地到中央的联系
+const homeStore = useHomeStore(); 
 const menusList = computed(()=>homeStore.menusList)
 const swiperList = computed(() => homeStore.swiperList)
 

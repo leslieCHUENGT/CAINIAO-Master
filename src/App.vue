@@ -38,7 +38,6 @@ router.beforeEach((to, from, next) => {
     <transition :name="state.transitionName">
       <!-- 缓存组件 -->
       <keep-alive> 
-        
         <component :is='Component' :key="$route.name" v-if="$route.meta.keepAlive" />
       </keep-alive>
     </transition>
