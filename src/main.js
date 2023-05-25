@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import router from './router'
 import App from './App.vue'
-import '@/mock/index' // 模拟数据
+import '@/mock/index' 
 import { createPinia } from 'pinia'
 import {
   Card,
@@ -48,7 +48,6 @@ import 'element-plus/dist/index.css'
 import 'vant/lib/index.css'
 import 'lib-flexible/flexible' 
 import './assets/main.css'
-
 
 const app = createApp(App)
 app
