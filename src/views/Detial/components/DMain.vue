@@ -43,18 +43,16 @@
     </div>
 </template>
 <script setup>
-import { computed, ref,onMounted } from 'vue'
+import { computed } from 'vue'
 import { useProductsDetailStore } from '@/store/detail.js'
 import Swipe from '@/components/Swipe.vue'
 import { isCart } from '@/utils/index.js'
-import DCart from './DCart.vue'
 
 const isCartShow = isCart()
 const isHomeSwiper = false
 const productsDetailStore = useProductsDetailStore()
 const swiperList = computed(() => productsDetailStore.swiperList)
 const description = computed(() => productsDetailStore.description)
-
 
 </script>
 <style lang="stylus" scoped>

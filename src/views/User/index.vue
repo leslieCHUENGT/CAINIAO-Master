@@ -115,7 +115,7 @@ import { useHomeStore } from '@/store/home.js'
 import { showLoadingToast, closeToast } from 'vant'
 
 const swiperList = computed(() => homeStore.swiperList)
-const homeStore = useHomeStore(); // 本地到中央的联系
+const homeStore = useHomeStore(); 
 
 onMounted(async () => {
   showLoadingToast({
