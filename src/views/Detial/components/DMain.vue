@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="container-cart" v-else>
-            <!-- <DCart /> --> 666
+            <DCart /> 
         </div>
     </div>
 </template>
